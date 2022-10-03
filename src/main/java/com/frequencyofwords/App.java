@@ -8,5 +8,22 @@ public class App {
 
     public static void main(String[] args) {
         System.out.println("Frequency of Words using HashTable!!");
+
+        String paragraph = "to be or not to be";
+        System.out.println("The String is : " + paragraph);
+        String[] splitArray = paragraph.split(" ");
+
+        HashTable<String, Integer> hashTable = new HashTable<>();
+
+        for (String word : splitArray) {
+            if (hashTable.containsKey(word)) {
+
+                int count = hashTable.get(word);
+                hashTable.replace(word, count + 1);
+            } else {
+                hashTable.put(word, 1);
+            }
+        }
+        hashTable.print();
     }
 }
