@@ -60,6 +60,20 @@ public class LinkedList<K, V> {
         return null;
     }
 
+    public void append(MyMapNode<K, V> node) {
+
+        if (head == null) {
+            head = node;
+
+        } else {
+            MyMapNode<K, V> temp = head;
+            while (temp.next != null) {
+                temp = temp.next;
+            }
+            temp.next = node;
+        }
+    }
+
     public void print() {
         MyMapNode<K, V> temp = head;
         while (temp != null) {

@@ -9,20 +9,21 @@ public class App {
     public static void main(String[] args) {
         System.out.println("Frequency of Words using HashTable!!");
 
-        String paragraph = "to be or not to be";
-        System.out.println("The String is : " + paragraph);
+        String paragraph = "paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations";
+        System.out.println("The paragraph is : " + paragraph);
         String[] splitArray = paragraph.split(" ");
 
         HashTable<String, Integer> hashTable = new HashTable<>();
 
         for (String word : splitArray) {
-            if (hashTable.containsKey(word)) {
+            Integer value = hashTable.get(word);
 
-                int count = hashTable.get(word);
-                hashTable.replace(word, count + 1);
+            if (value == null) {
+                value = 1;
             } else {
-                hashTable.put(word, 1);
+                value = value + 1;
             }
+            hashTable.add(word, value);
         }
         hashTable.print();
     }
