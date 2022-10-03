@@ -26,5 +26,9 @@ public class App {
             hashTable.add(word, value);
         }
         hashTable.print();
+        System.out.println("Frequency After Deletion of avoidable");
+        hashTable.remove("avoidable");
+        System.out.println("\n\n");
+        hashTable.print();
     }
 }
